@@ -1,0 +1,14 @@
+<ul>
+  <%= form_for(@idea) do |f| %>
+    <li><%= f.label :title %></li>
+    <p><%= f.text_field :title %></p>
+
+    <li><%= f.label :description %></li>
+    <p><%= f.text_field :description %></p>
+
+    <%= f.collection_select(:category_id, Category.all, :id, :label) %>
+
+    <%= f.submit 'Submit' %>
+
+    <% end  %>
+</ul>

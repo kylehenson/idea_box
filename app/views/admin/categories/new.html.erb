@@ -1,0 +1,9 @@
+<ul>
+  <%= form_for([:admin, @category]) do |f| %>
+    <li><%= f.label :label %></li>
+    <p><%= f.text_field :label %></p>
+
+    <%= f.submit 'Create category' %>
+
+    <% end %>
+</ul>

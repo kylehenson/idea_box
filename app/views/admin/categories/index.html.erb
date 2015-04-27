@@ -1,0 +1,9 @@
+<%= button_to 'Create category', new_admin_category_path, method: :get %><br>
+<h1>Existing Categories:</h1>
+
+<ul>
+  <% @categories.each do |category| %>
+    <li><%= category.label %></li>
+    <%= link_to 'Delete', admin_category_path(category), method: :delete %>
+  <% end %>
+</ul>

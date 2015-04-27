@@ -1,0 +1,13 @@
+<h1>Welcome <%= current_user.first_name %></h1>
+<h2>Brilliance in the Making:</h2>
+<%= link_to 'Create New Idea', new_idea_path %><br>
+
+<ul>
+<% current_user.ideas.each do |idea| %>
+  <%= idea.category %>
+  <strong><li><%= idea.title %></li></strong>
+  <%= idea.description %> ||
+  <%= link_to 'Edit', edit_idea_path(idea) %> ||
+  <%= link_to 'Delete', idea, method: :delete, data: { data: 'Are you sure?' } %>
+<% end %>
+</ul>
